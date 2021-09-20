@@ -8,8 +8,7 @@ export default ({ data }) => (
       <div className="container">
         <div className="site">
           <a href="base-index.html">
-            {/* <img src="images/logo.svg" alt="ESSENTIALS" /> */}
-            <svg
+           <svg
               xmlns="http://www.w3.org/2000/svg"
               width="225.65"
               height="46.59"
@@ -44,7 +43,6 @@ export default ({ data }) => (
         <p>食物を愛するよりも誠実な愛はない ― バーナード・ショー</p>
       </div>
       <div className="wave">
-        {/* <img src="images/wave.svg" alt="" /> */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1366 229.5"
@@ -64,7 +62,6 @@ export default ({ data }) => (
         <div className="details">
           <div className="detail">
             <figure>
-              {/* <img src="images/fruit.jpg" alt="" /> */}
               <Img fluid={data.fruit.childImageSharp.fluid} alt="" />
             </figure>
             <h3>フルーツ</h3>
@@ -73,7 +70,6 @@ export default ({ data }) => (
           </div>
           <div className="detail">
             <figure>
-              {/* <img src="images/grain.jpg" alt="" /> */}
               <Img fluid={data.grain.childImageSharp.fluid} alt="" />
             </figure>
             <h3>穀物</h3>
@@ -82,7 +78,6 @@ export default ({ data }) => (
           </div>
           <div className="detail">
             <figure>
-              {/* <img src="images/beverage.jpg" alt="" /> */}
               <Img fluid={data.beverage.childImageSharp.fluid} alt="" />
             </figure>
             <h3>飲み物</h3>
@@ -106,7 +101,6 @@ export default ({ data }) => (
       <div className="container">
         <div className="site">
           <a href="base-index.html">
-            {/* <img src="images/logo-w.svg" alt="ESSENTIALS" /> */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="225.65"
@@ -143,6 +137,13 @@ export default ({ data }) => (
           </li>
         </ul>
       </div>
+      <div className="back">
+          <Img
+            fluid={data.pattern.childImageSharp.fluid}
+            alt=""
+            style={{ height: "100%"}}
+          />
+        </div>
     </footer>
   </div>
 
@@ -181,6 +182,13 @@ export const query = graphql`
     berry: file(relativePath: {eq: "berry.jpg"}) {
       childImageSharp {
         fluid(maxWidth: 1600) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    pattern: file(relativePath: {eq: "pattern.jpg"}){
+      childImageSharp {
+        fluid(maxWidth: 1920, quality: 90){
           ...GatsbyImageSharpFluid_withWebp
         }
       }
