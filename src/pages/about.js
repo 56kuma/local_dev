@@ -20,7 +20,7 @@ export default ({ data }) => (
 
     <article className="content">
       <div className="container">
-          <h1 className="bar">ESSENTIALSについて</h1>
+          <h1 className="bar">ESSENTIALSについて, add comment.</h1>
 
           <aside className="info">
               <div className="subtitle">
