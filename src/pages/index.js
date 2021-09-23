@@ -2,13 +2,13 @@ import React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
-// import Header from "../components/header"
-// import Footer from "../components/footer"
-
 import Layout from "../components/layout"
+
+import SEO from "../components/seo"
 
 export default ({ data }) => (
   <Layout>
+    <SEO />
     <section className="hero">
       <figure>
         <Img
