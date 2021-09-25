@@ -9,13 +9,20 @@ import { faUtensils, faCheckSquare } from "@fortawesome/free-solid-svg-icons"
 
 import SEO from "../components/seo"
 
-export default ({ data }) => (
+export default ({ data, location }) => (
   <Layout>
-    <SEO />
+    <SEO
+      pagetitle="ESSENTIALSについて"
+      pagedesc="食べ物についての情報を発信しているサイトです。"
+      pagepath={location.pathname}
+      pageimg={data.about.childImageSharp.original.src}
+      pageimgw={data.about.childImageSharp.original.width}
+      pageimgh={data.about.childImageSharp.original.height}
+    />
     <div className="eyecatch">
       <figure>
         <Img
-          fruid={data.about.childImageSharp.fluid}
+          fluid={data.about.childImageSharp.fluid}
           alt="ブルーベリー＆ヨーグルト"
         />
         </figure>
@@ -23,7 +30,7 @@ export default ({ data }) => (
 
     <article className="content">
       <div className="container">
-          <h1 className="bar">ESSENTIALSについて, add comment.</h1>
+          <h1 className="bar">ESSENTIALSについて</h1>
 
           <aside className="info">
               <div className="subtitle">
@@ -63,6 +70,11 @@ export const query = graphql`
       childImageSharp {
         fluid(maxWidth: 1600) {
           ...GatsbyImageSharpFluid_withWebp
+        }
+        original {
+          height
+          src
+          width
         }
       }
     }
